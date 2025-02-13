@@ -17,13 +17,17 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-                if (window.beehiiv && window.beehiiv.showRecommendations) {
-                    window.beehiiv.showRecommendations();
-                }
-            
-        });
+        function showBeehiivRecommendations() {
+            if (window.beehiiv && window.beehiiv.showRecommendations) {
+                window.beehiiv.showRecommendations();
+            } else {
+                // If beehiiv is not available yet, try again after a short delay
+                setTimeout(showBeehiivRecommendations, 500); // Check every 500ms
+            }
+        }
+
+        // Call the function to show recommendations when the page loads
+        window.addEventListener('DOMContentLoaded', showBeehiivRecommendations);
     </script>
 
 
