@@ -12,22 +12,23 @@
         }
     </style>
     <script src="https://embeds.beehiiv.com/recommendations.js?_bhpid=6bf953c4-4f75-4d1b-b833-c6a687a3a5ad&v=1" data-beehiiv-recommendations-widget defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>  <script src="https://embeds.beehiiv.com/recommendations.js?_bhpid=6bf953c4-4f75-4d1b-b833-c6a687a3a5ad&v=1" data-beehiiv-recommendations-widget defer></script>
 </head>
 <body>
 
 
     <script>
-        function showBeehiivRecommendations() {
-            if (window.beehiiv && window.beehiiv.showRecommendations) {
-                window.beehiiv.showRecommendations();
-            } else {
-                // If beehiiv is not available yet, try again after a short delay
-                setTimeout(showBeehiivRecommendations, 500); // Check every 500ms
+        $(document).ready(function() { // Use jQuery's $(document).ready()
+            function showBeehiivRecommendations() {
+                if (window.beehiiv && window.beehiiv.showRecommendations) {
+                    window.beehiiv.showRecommendations();
+                } else {
+                    setTimeout(showBeehiivRecommendations, 500);
+                }
             }
-        }
 
-        // Call the function to show recommendations when the page loads
-        window.addEventListener('DOMContentLoaded', showBeehiivRecommendations);
+            showBeehiivRecommendations(); // Call the function
+        });
     </script>
 
 
