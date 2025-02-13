@@ -10,16 +10,21 @@
             margin: 0; /* Remove default body margins */
             padding: 0; /* Remove default body padding */
         }
-        #iframe-container { /* Style the container for better control */
-            width: 100%;
-            max-width: 600px; /* Optional: Set a maximum width */
-            margin: 100px auto; /* Center the iframe */
-        }
     </style>
+    <script src="https://embeds.beehiiv.com/recommendations.js?_bhpid=6bf953c4-4f75-4d1b-b833-c6a687a3a5ad&v=1" data-beehiiv-recommendations-widget defer></script>
 </head>
 <body>
 
-<script src="https://embeds.beehiiv.com/recommendations.js?_bhpid=6bf953c4-4f75-4d1b-b833-c6a687a3a5ad&v=1" data-beehiiv-recommendations-widget defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            (function() {
+                if (window.beehiiv && window.beehiiv.showRecommendations) {
+                    window.beehiiv.showRecommendations();
+                }
+            })();
+        });
+    </script>
 
 
 </body>
